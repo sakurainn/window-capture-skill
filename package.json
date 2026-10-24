@@ -1,0 +1,38 @@
+{
+  "name": "window-capture-skill",
+  "version": "0.1.0",
+  "description": "跨平台窗口 / 屏幕截图技能：把截图交给 AI 编码代理的视觉反馈闭环（Windows / macOS / Linux）",
+  "license": "MIT",
+  "bin": {
+    "window-capture-skill": "bin/window-capture.js"
+  },
+  "files": [
+    "bin/window-capture.js",
+    "scripts/*.py",
+    "SKILL.md",
+    "README.md"
+  ],
+  "engines": {
+    "node": ">=16"
+  },
+  "os": [
+    "win32",
+    "darwin",
+    "linux"
+  ],
+  "keywords": [
+    "screenshot",
+    "window-capture",
+    "gui-testing",
+    "agent-skill",
+    "cli"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sakurainn/window-capture-skill.git"
+  },
+  "bugs": {
+    "url": "https://github.com/sakurainn/window-capture-skill/issues"
+  },
+  "homepage": "https://github.com/sakurainn/window-capture-skill#readme"
+}

@@ -25,7 +25,18 @@ git clone https://github.com/sakurainn/window-capture-skill ~/.agents/skills/win
 
 也可以直接克隆到 `~/.claude/skills/window-capture`，SKILL.md 中的 front matter 会被自动识别。
 
-## 使用
+## 用 npx 直接用（无需克隆）
+
+需要本机已安装 Python 3。npx 会临时拉取仓库并转发参数给 `screen_fetch.py`：
+
+```bash
+npx github:sakurainn/window-capture-skill --list
+npx github:sakurainn/window-capture-skill --window "窗口标题" -o shot.png
+```
+
+发布到 npm 之后可简写为 `npx window-capture-skill ...`。默认依次尝试 `python` / `py -3`（Windows）或 `python3` / `python`（macOS / Linux），也可用环境变量 `WINDOW_CAPTURE_PYTHON` 指定解释器。
+
+## 使用（本地克隆）
 
 ```bash
 export PYTHONUTF8=1
@@ -45,6 +56,8 @@ python scripts/screen_fetch.py --window "窗口标题" -o shot.png
 
 ```
 SKILL.md              # 技能说明与代理工作流
+bin/
+  window-capture.js   # npx / 全局安装入口（转发到 Python）
 scripts/
   screen_fetch.py     # 命令行入口
   sf_common.py        # 公共工具
