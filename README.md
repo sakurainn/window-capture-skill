@@ -30,11 +30,15 @@ git clone https://github.com/sakurainn/window-capture-skill ~/.agents/skills/win
 需要本机已安装 Python 3。npx 会临时拉取仓库并转发参数给 `screen_fetch.py`：
 
 ```bash
-npx github:sakurainn/window-capture-skill --list
-npx github:sakurainn/window-capture-skill --window "窗口标题" -o shot.png
+npx --yes git+https://github.com/sakurainn/window-capture-skill --list
+npx --yes git+https://github.com/sakurainn/window-capture-skill --window "窗口标题" -o shot.png
 ```
 
-发布到 npm 之后可简写为 `npx window-capture-skill ...`。默认依次尝试 `python` / `py -3`（Windows）或 `python3` / `python`（macOS / Linux），也可用环境变量 `WINDOW_CAPTURE_PYTHON` 指定解释器。
+也可以用 `npm i -g git+https://github.com/sakurainn/window-capture-skill` 安装出全局命令 `window-capture-skill`。发布到 npm 之后即可简写为 `npx window-capture-skill ...`。
+
+> 注意：直接写 `npx github:sakurainn/window-capture-skill` 时 npm 会走 SSH（`git@github.com`），没配置密钥会失败；请用上面的 `git+https` 形式。
+
+默认依次尝试 `python` / `py -3`（Windows）或 `python3` / `python`（macOS / Linux），也可用环境变量 `WINDOW_CAPTURE_PYTHON` 指定解释器。
 
 ## 使用（本地克隆）
 
